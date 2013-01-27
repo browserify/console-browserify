@@ -11,40 +11,41 @@ if (typeof global !== "undefined" && global.console) {
 } else if (typeof window !== "undefined" && window.console) {
     console = window.console
 } else {
-    console = consoleShim()
+    console = {}
 }
 
-if (!console.time) {
-    console.time = time
+var functions = {
+    log: log
+    , info: info
+    , warn: warn
+    , error: error
+    , time: time
+    , timeEnd: timeEnd
+    , trace: trace
+    , dir: dir
+    , assert: assert
 }
 
-if (!console.timeEnd) {
-    console.timeEnd = timeEnd
-}
-
-if (!console.trace) {
-    console.trace = trace
-}
-
-if (!console.dir) {
-    console.dir = dir
-}
-
-if (!console.assert) {
-    console.assert = assert
-}
+Object.keys(functions).forEach(function (name) {
+    if (!console[name]) {
+        console[name] = functions[name]
+    }
+})
 
 module.exports = console
 
-function consoleShim() {
-    return {
-        log: function () {}
-        , warn: function () {}
-        , error: function () {}
-        , info: function () {}
-        , dir: function () {}
-        , assert: function () {}
-    }
+function log() {}
+
+function info() {
+    console.log.apply(console, arguments)
+}
+
+function warn() {
+    console.log.apply(console, arguments)
+}
+
+function error() {
+    console.warn.apply(console, arguments)
 }
 
 function time(label) {
