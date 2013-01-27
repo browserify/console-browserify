@@ -1,6 +1,10 @@
 var console = require("../index")
 var test = require("tape")
 
+if (typeof window !== "undefined" && !window.JSON) {
+    window.JSON = require("jsonify")
+}
+
 test("console has expected methods", function (assert) {
     assert.ok(console.log)
     assert.ok(console.info)
