@@ -14,23 +14,27 @@ if (typeof global !== "undefined" && global.console) {
     console = {}
 }
 
-var functions = {
-    log: log
-    , info: info
-    , warn: warn
-    , error: error
-    , time: time
-    , timeEnd: timeEnd
-    , trace: trace
-    , dir: dir
-    , assert: assert
-}
+var functions = [
+    [log, "log"]
+    , [info, "info"]
+    , [warn, "warn"]
+    , [error, "error"]
+    , [time, "time"]
+    , [timeEnd, "timeEnd"]
+    , [trace, "trace"]
+    , [dir, "dir"]
+    , [assert, "assert"]
+]
 
-Object.keys(functions).forEach(function (name) {
+for (var i = 0; i < functions.length; i++) {
+    var tuple = functions[i]
+    var f = tuple[0]
+    var name = tuple[1]
+
     if (!console[name]) {
-        console[name] = functions[name]
+        console[name] = f
     }
-})
+}
 
 module.exports = console
 
