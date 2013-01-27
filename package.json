@@ -1,6 +1,6 @@
 {
   "name": "console-browserify",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Emulate console for all the browsers",
   "keywords": [],
   "author": "Raynos <raynos2@gmail.com>",
