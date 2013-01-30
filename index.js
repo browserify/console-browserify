@@ -1,4 +1,4 @@
-var now = require("date-now")
+/*global window, global*/
 var util = require("util")
 var assert = require("assert")
 
@@ -53,7 +53,7 @@ function error() {
 }
 
 function time(label) {
-    times[label] = now()
+    times[label] = Date.now()
 }
 
 function timeEnd(label) {
@@ -62,7 +62,7 @@ function timeEnd(label) {
         throw new Error("No such label: " + label)
     }
 
-    var duration = now() - time
+    var duration = Date.now() - time
     console.log(label + ": " + duration + "ms")
 }
 
