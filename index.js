@@ -1,6 +1,7 @@
 /*global window, global*/
 var util = require("util")
 var assert = require("assert")
+var now = require("performance-now")
 
 var slice = Array.prototype.slice
 var console
@@ -53,7 +54,7 @@ function error() {
 }
 
 function time(label) {
-    times[label] = Date.now()
+    times[label] = now()
 }
 
 function timeEnd(label) {
@@ -62,8 +63,8 @@ function timeEnd(label) {
         throw new Error("No such label: " + label)
     }
 
-    var duration = Date.now() - time
-    console.log(label + ": " + duration + "ms")
+    var duration = now() - time
+    console.log(label + ": " + duration.toFixed(2) + "ms")
 }
 
 function trace() {
