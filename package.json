@@ -17,7 +17,7 @@
     "email": "raynos2@gmail.com"
   },
   "dependencies": {
-    "date-now": "^0.1.4"
+    "date-now": "0.1.x"
   },
   "devDependencies": {
     "tape": "^2.12.3",
