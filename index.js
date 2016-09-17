@@ -1,7 +1,7 @@
 /*global window, global*/
 var util = require("util")
 var assert = require("assert")
-var now = require("date-now")
+function now() { return new Date().getTime() }
 
 var slice = Array.prototype.slice
 var console
