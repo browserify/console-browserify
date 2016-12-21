@@ -16,9 +16,6 @@
     "url": "https://github.com/Raynos/console-browserify/issues",
     "email": "raynos2@gmail.com"
   },
-  "dependencies": {
-    "date-now": "^0.1.4"
-  },
   "devDependencies": {
     "tape": "^2.12.3",
     "jsonify": "0.0.0",
