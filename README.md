@@ -23,7 +23,7 @@ console.log("hello world!")
 
  - Raynos
 
-## MIT Licenced
+## MIT Licensed
 
 
 
