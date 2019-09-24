@@ -27,7 +27,7 @@ console.log("hello world!")
 
 
 
-  [1]: https://secure.travis-ci.org/Raynos/console-browserify.png
-  [2]: http://travis-ci.org/Raynos/console-browserify
+  [1]: https://secure.travis-ci.org/browserify/console-browserify.png
+  [2]: http://travis-ci.org/browserify/console-browserify
   [3]: http://ci.testling.com/Raynos/console-browserify.png
   [4]: http://ci.testling.com/Raynos/console-browserify
