@@ -63,6 +63,7 @@ function timeEnd(label) {
         throw new Error("No such label: " + label)
     }
 
+    delete times[label]
     var duration = now() - time
     console.log(label + ": " + duration + "ms")
 }
