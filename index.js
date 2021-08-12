@@ -1,9 +1,9 @@
 /*global window, global*/
 var util = require("util")
-var assert = require("assert")
 function now() { return new Date().getTime() }
 
 var slice = Array.prototype.slice
+var concat = Array.prototype.concat
 var console
 var times = {}
 
@@ -24,7 +24,7 @@ var functions = [
     [timeEnd, "timeEnd"],
     [trace, "trace"],
     [dir, "dir"],
-    [consoleAssert, "assert"]
+    [assert, "assert"]
 ]
 
 for (var i = 0; i < functions.length; i++) {
@@ -79,9 +79,8 @@ function dir(object) {
     console.log(util.inspect(object) + "\n")
 }
 
-function consoleAssert(expression) {
+function assert(expression) {
     if (!expression) {
-        var arr = slice.call(arguments, 1)
-        assert.ok(false, util.format.apply(null, arr))
+        console.error.apply(null, concat.call(["Assertion failed:"], arguments.length > 1 ? slice.call(arguments, 1) : "console.assert"))
     }
 }
