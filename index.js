@@ -81,6 +81,6 @@ function dir(object) {
 
 function assert(expression) {
     if (!expression) {
-        console.error.apply(null, concat.call(["Assertion failed:"], arguments.length > 1 ? slice.call(arguments, 1) : "console.assert"))
+        console.error.apply(null, arguments.length > 1 ? concat.call(["Assertion failed:"], slice.call(arguments, 1)) : ["Assertion failed"])
     }
 }
